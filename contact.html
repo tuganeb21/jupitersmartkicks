@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Smart Kicks</title>
+  <meta name="description" content="Contact our licensed team for quotes, support, or documentation." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="pics/icon2.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html#home" aria-label="Homepage">
+        <img src="pics/icon2.png" alt="Your Brand logo" class="logo" />
+        <span class="brand-text">Jupiter smart kicks</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="services.html">Services</a></li>
+          <li><a class="nav-link" href="about.html">About Us</a></li>
+          <li><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section page-hero reveal">
+      <div class="container">
+        <h1>Contact our team</h1>
+        <p>We typically reply within one business day. Licensed, legit, and ready to help.</p>
+        <p><a href="about.html"><u>More about us.....</a></u></p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container grid contact-grid">
+        <div>
+          <h2>Reach us</h2>
+          <ul class="list contact-list">
+            <li><strong>Email:</strong> <a class="link-underline" href="mailto:hello@example.com">ndangiziomer100@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a class="link-underline" href="tel:+250700000000">+250 784 438 104</a></li>
+            <li><strong>Hours:</strong> Mon–Fri, 09:00–17:00 CAT</li>
+            <li><strong>Address:</strong> Kigali, Rwanda</li>
+          </ul>
+          <p class="note">For compliance documents, include “License docs request” in your subject line.</p>
+        </div>
+
+        <form id="contact-form" class="form" novalidate aria-labelledby="contact-title" method="POST" action="https://formspree.io/f/mvgbpqdb">
+          <h2 id="contact-title" class="sr-only">Contact form</h2>
+
+          <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+            <p class="error" id="err-name" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+            <p class="error" id="err-email" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            <p class="error" id="err-phone" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" required />
+            <p class="error" id="err-subject" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+            <p class="error" id="err-message" role="alert"></p>
+          </div>
+
+          <div class="field checkbox">
+            <input id="consent" name="consent" type="checkbox" required />
+            <label for="consent">I consent to be contacted regarding my inquiry.</label>
+            <p class="error" id="err-consent" role="alert"></p>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <p class="form-status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="/" aria-label="Homepage">
+          <img src="pics/icon.png" alt="" class="logo small" />
+          <span class="brand-text">Jupiter Smart Kicks</span>
+        </a>
+        <p class="foot-note">© <span id="year"></span> Jupiter Smart Kicks Ltd. All rights reserved.</p>
+      </div>
+      <div>
+        <h3 class="foot-title">Company</h3>
+        <ul class="foot-links">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#legitimacy">Legitimacy</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="foot-title">Legal</h3>
+        <ul class="foot-links">
+          <li><a href="#" rel="nofollow">Terms</a></li>
+          <li><a href="#" rel="nofollow">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="foot-title">Contact</h3>
+        <ul class="foot-links">
+          <li><a href="mailto:hello@example.com">ndangiziomer100@gmail.com</a></li>
+          <li><a href="tel:+250700000000">+250 784 438 104</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="loomuniy-text">By Loomuniy.Inc</p>
+    </div>
+    <button class="to-top" aria-label="Back to top">↑</button>
+  </footer>
+
+  <style>
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .loomuniy-text {
+      color: #FFD700;
+      font-family: 'Cinzel', serif;
+    }
+  </style>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
