@@ -295,29 +295,28 @@ textarea:focus-visible {
       background: rgba(212, 175, 55, 0.12);
     }
 
-    /* Calendar button on mobile - hide from header, show in nav menu */
-    .nav-wrap > .calendar-btn {
-      display: none;
+    /* Calendar button on mobile */
+    .calendar-nav-item {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      width: 100%;
     }
 
-    /* Show calendar button inside nav menu for mobile - under Contact */
     .site-nav .calendar-btn {
-      display: block !important;
-      position: static;
-      transform: none;
-      font-size: 1.3rem;
-      padding: 0.8rem 1.2rem;
-      width: 100%;
-      text-align: center;
-      margin-top: 1.5rem;
+      display: block;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
       border-radius: 8px;
-      transition: background var(--speed), color var(--speed);
+      font-size: 1.5rem;
+      padding: 0.8rem 2rem;
+      transition: background var(--speed), transform var(--speed);
       animation: subtleGlitter 3s ease-in-out infinite;
     }
 
     .site-nav .calendar-btn:hover {
-      background: rgba(212, 175, 55, 0.08);
-      transform: none;
+      background: rgba(212, 175, 55, 0.2);
+      transform: scale(1.05);
     }
 
     /* Show hamburger toggle */
@@ -615,29 +614,27 @@ textarea:focus-visible {
   pointer-events: auto;
 }
 
-/* Calendar Booking Button - Desktop only */
+/* Calendar Booking Button - Desktop */
 @media (min-width: 769px) {
+  .calendar-nav-item {
+    margin-left: 1rem;
+  }
+
   .site-nav .calendar-btn {
-    position: absolute;
-    right: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
     background: none;
     border: none;
     color: var(--gold);
     cursor: pointer;
     font-size: 1.6rem;
-    z-index: 100;
     padding: 0.5rem;
     transition: all var(--speed);
     text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
     animation: subtleGlitter 3s ease-in-out infinite;
-    margin-left: 1rem;
   }
 
   .site-nav .calendar-btn:hover {
     color: var(--gold-strong);
-    transform: translateY(-50%) scale(1.1);
+    transform: scale(1.1);
   }
 }
 
