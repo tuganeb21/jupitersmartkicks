@@ -19,6 +19,10 @@ const navToggle = document.querySelector('.nav-toggle');
         siteNav.classList.remove('open');
         navToggle.setAttribute('aria-expanded', false);
       }
+      // Don't close menu when clicking calendar button
+      if (e.target.matches('.calendar-btn')) {
+        e.stopPropagation();
+      }
     });
 
     // Close on Escape key
@@ -218,24 +222,35 @@ const navToggle = document.querySelector('.nav-toggle');
   let currentDate = new Date();
   let selectedDate = null;
 
-  // Open modal
-  if (bookingModal && calendarBtn) {
-    calendarBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      bookingModal.setAttribute('aria-hidden', 'false');
-      bookingModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      renderCalendar();
-
-      // Close mobile menu if open
-      const siteNav = document.getElementById('site-nav');
-      const navToggle = document.querySelector('.nav-toggle');
-      if (siteNav && siteNav.classList.contains('open')) {
-        siteNav.classList.remove('open');
-        if (navToggle) navToggle.setAttribute('aria-expanded', false);
-      }
-    });
+  // Open modal - handle both desktop button and mobile nav pseudo-element
+  if (bookingModal) {
+    // Desktop calendar button
+    if (calendarBtn) {
+      calendarBtn.addEventListener('click', () => {
+        bookingModal.setAttribute('aria-hidden', 'false');
+        bookingModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        renderCalendar();
+      });
+    }
+    
+    // Mobile calendar button (pseudo-element click)
+    const siteNav = document.getElementById('site-nav');
+    if (siteNav) {
+      siteNav.addEventListener('click', (e) => {
+        // Check if click is on the pseudo-element area (last part of nav)
+        const navRect = siteNav.getBoundingClientRect();
+        const clickY = e.clientY;
+        const navBottom = navRect.bottom;
+        // If click is near the bottom of nav (where pseudo-element is), open calendar
+        if (clickY > navBottom - 60 && window.innerWidth <= 768) {
+          bookingModal.setAttribute('aria-hidden', 'false');
+          bookingModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          renderCalendar();
+        }
+      });
+    }
 
     // Close modal
     bookingClose.addEventListener('click', closeModal);
