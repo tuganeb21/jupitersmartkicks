@@ -33,11 +33,12 @@
           <li><a class="nav-link" href="services.html">Services</a></li>
           <li><a class="nav-link" href="about.html">About Us</a></li>
           <li><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="calendar-nav-item">
+            <button id="calendar-btn" class="calendar-btn" aria-label="Book an appointment" title="Book an appointment">
+              📅
+            </button>
+          </li>
         </ul>
-        <!-- Calendar Booking Button -->
-        <button id="calendar-btn" class="calendar-btn" aria-label="Book an appointment" title="Book an appointment">
-          📅
-        </button>
       </nav>
     </div>
   </header>
@@ -368,7 +369,7 @@
   </style>
 
   <script>
-    (() => {
+    document.addEventListener('DOMContentLoaded', () => {
       // Use global helpers from script.js when available; otherwise fall back locally.
       const $ = (window.$) ? window.$ : ((sel, root = document) => root.querySelector(sel));
       const $$ = (window.$$) ? window.$$ : ((sel, root = document) => Array.from(root.querySelectorAll(sel)));
@@ -568,8 +569,9 @@
         });
       }
 
-      document.addEventListener('DOMContentLoaded', renderAllReviews);
-    })();
+      // Initial render
+      renderAllReviews();
+    });
   </script>
 </body>
 </html>
